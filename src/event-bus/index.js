@@ -78,5 +78,28 @@ class CZEventBus {
       delete this.eventBus[eventName];
     }
   }
+
+  once(eventName, eventCallback, thisArg) {
+    if (typeof eventName !== 'string') {
+      throw new TypeError('类型错误，应为string类型');
+    }
+
+    if (typeof eventCallback !== 'function') {
+      throw new TypeError('类型错误，应为function类型');
+    }
+
+    /**
+     * 单例事件监听
+     * @param {srting} eventName 事件名
+     * @param {function} eventCallback 回调事件
+     * @param {} thisArg
+     */
+    const tempCallback = (...payload) => {
+      this.off(eventName, tempCallback);
+      eventCallback.apply(thisArg, payload);
+    };
+
+    return this.on(eventName, tempCallback, thisArg);
+  }
 }
 module.exports = CZEventBus;
