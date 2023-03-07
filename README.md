@@ -13,7 +13,7 @@
 ## 安依赖
 
 ```
-npm install cz-event-bus
+npm install cz-event-bus-lib
 
 or
 
