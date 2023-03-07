@@ -7,3 +7,6 @@ const onThemeFn = (...payload) => {
   console.log('--->on', payload);
 };
 console.log(eventBus.on('themeProps', onThemeFn));
+
+// .emit测试脚本
+eventBus.emit('themeProps', 'dark');
