@@ -1,0 +1,11 @@
+{
+  "name": "cz-event-bus",
+  "version": "1.0.0",
+  "description": "一个跨平台的javascript通信脚本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yanglingyun",
+  "license": "MIT"
+}
